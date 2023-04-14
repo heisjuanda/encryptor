@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+@mixin buttons($color,$text){
+    border-radius: 1vmax;
+    overflow: hidden;
+    background-color: $color;
+    color: $text;
+    width: 18vw;
+    min-width: 150px;
+    max-width: 328px;
+    height: 4vw;
+    min-height: 45px;
+    max-height: 64px;
+    border: 1px solid $color;
+    cursor: pointer;
+    font-size: clamp(15px,5px + 0.8vw,20px);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    .input-section {
+        .input-section__logo {
+            picture {
+                img {
+                    margin-top: 2%;
+                    margin-left: 2%;
+                    width: clamp(20px, 10px + 1vw, 100px);
+                }
+            }
+        }
+
+        .input-section__content {
+            height: 90dvh;
+            display: flex;
+            justify-content: center;
+            .content-table {
+                width: 70%;
+                margin-top: 2%;
+                textarea {
+                    width: 90%;
+                    height: 73%;
+                    border: none;
+                    resize: none;
+                    flex-grow: 1;
+                    outline: none;
+                    text-align: center;
+                    color: #0A3871;
+                    font-size: clamp(20px,5px + 2vw,32px);
+                    background-color: transparent;
+                }
+                .content-table__alert{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1%;
+                    margin-top: 2%;
+                    font-family: 'Poppins', sans-serif;
+                    img{
+                        width: 16px;
+                        height: 16px;
+                    }
+                    p{
+                        font-size: clamp(15px,2vw,15px);
+                    }
+                }
+                .content-table__button-actions {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10%;
+                    button:nth-child(1){
+                        @include buttons(#0A3871,white);
+                        border: none;
+                    }
+                    button:nth-child(2){
+                        @include buttons(#0A3871,#0A3871);
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .output-section {
+        //border: 1px solid gray;
+        border-radius: 1vmax;
+        margin: 5%;
+        box-shadow: 1vw 1vw 1vw rgba(0, 0, 0, 0.15);
+        transform: translateX(-15%);
+        .output-section__noInput{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            //overflow: hidden;
+            height: 100%;
+            img{
+                width: 336px;
+            }
+            h2{
+                font-size: 24px;
+            }
+            p{
+                font-size: 16px;
+            }
+            .output-text{
+                display: flex;
+                justify-content: center;
+                margin-top: 5%;
+                height: 80%;
+                textarea{
+                    width: 95%;
+                    text-align: left;
+                    font-size: clamp(20px,5px + 2vw,32px);
+                    height: 100%;
+                    resize: none;
+                    border: none;
+                    background-color: transparent;
+                    color: black;
+                }
+            }
+            .copyBton{
+                position: absolute;
+                @include buttons(#0A3871,#0A3871);
+                background-color: transparent;
+                bottom: 2%;
+                left: 15%;
+            }
+        }   
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+        .input-section {
+            .input-section__content {
+                height: 70dvh;
+                display: flex;
+                justify-content: center;
+                .content-table {
+                    width: 90%;
+                    border: 1px solid transparent;
+                    margin-top: 2%;
+                    textarea {
+                        width: 90%;
+                        height: 73%;
+                        border-radius: 1.5vmax;
+                        font-size: clamp(25px,5px + 2vw,32px);
+                        margin-left: 5%;
+                    }
+                    .content-table__alert{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 1%;
+                        margin-top: 2%;
+                        img{
+                            width: 16px;
+                            height: 16px;
+                        }
+                        p{
+                            font-family: 'Poppins', sans-serif;
+                            font-size: clamp(12px,2vw,15px);
+                        }
+                    }
+                    .content-table__button-actions {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20%;
+                    }
+                }
+            }
+        }
+    
+        .output-section {
+            border: 1px solid transparent;
+            border-radius: 2vmax;
+            margin: 5%;
+            transform: translateX(0);
+            .output-section__noInput{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                position: relative;
+                height: 100%;
+                img{
+                    display: none;
+                }
+                h2{
+                    font-size: 24px;
+                }
+                p{
+                    font-size: 16px;
+                }
+                .output-text{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 5%;
+                    height: 80%;
+                    textarea{
+                        width: 95%;
+                        text-align: left;
+                        font-size: clamp(20px,5px + 2vw,32px);
+                        height: 100%;
+                        resize: none;
+                        border: none;
+                        background-color: transparent;
+                        color: black;
+                    }
+                    margin-bottom: 20%;
+                }
+                .copyBton{
+                    position: absolute;
+                    @include buttons(#0A3871,#0A3871);
+                    background-color: transparent;
+                    bottom: 2%;
+                    left: 30%;
+                }
+            }   
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+        .input-section {
+            .input-section__content {
+                height: 50dvh;
+                display: flex;
+                justify-content: center;
+                .content-table {
+                    width: 90%;
+                    border: 1px solid transparent;
+                    margin-top: 2%;
+                    textarea {
+                        width: 90%;
+                        height: 73%;
+                        border-radius: 1.5vmax;
+                        font-size: clamp(18px,5px + 2vw,32px);
+                        margin-left: 5%;
+                    }
+                    .content-table__alert{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 1%;
+                        margin-top: 2%;
+                        img{
+                            width: 16px;
+                            height: 16px;
+                        }
+                        p{
+                            font-family: 'Poppins', sans-serif;
+                            font-size: clamp(12px,2vw,15px);
+                        }
+                    }
+                    .content-table__button-actions {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        button:nth-child(1){
+                            min-width: 200px;
+                            min-height: 60px;
+                            margin-bottom: 7%;
+                            border-radius: 2vmax;
+                        }
+                        button:nth-child(2){
+                            min-width: 200px;
+                            min-height: 60px;
+                            border-radius: 2vmax;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .output-section {
+            border: 1px solid transparent;
+            border-radius: 2vmax;
+            margin: 5%;
+            margin-top: 110px;
+            transform: translateX(0);
+            .output-section__noInput{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                position: relative;
+                height: 100%;
+                img{
+                    display: none;
+                }
+                h2{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 14px;
+                }
+                .output-text{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 5%;
+                    height: 100%;
+                    border: 1px solid transparent;
+                    textarea{
+                        width: 95%;
+                        text-align: left;
+                        font-size: clamp(18px,5px + 2vw,32px);
+                        height: 90px;
+                        resize: none;
+                        border: 1px solid transparent;
+                        background-color: transparent;
+                        color: black;
+                    }
+                    margin-bottom: 60px;
+                }
+                .copyBton{
+                    position: absolute;
+                    @include buttons(#0A3871,#0A3871);
+                    background-color: transparent;
+                    bottom: 2%;
+                    left: 25%;
+                }
+            }   
+        }
+    }
+}

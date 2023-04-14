@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/main.js" type="module"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="input-section">
+            <header class="input-section__logo">
+                <picture>
+                    <img src="assets/img/aluraIcon.png" alt="alura icon">
+                </picture>
+            </header>
+            <article class="input-section__content">
+                <div class="content-table">
+                    <textarea placeholder="Ingrese el texto aquí" name="inputText" id="inputText" cols="30" rows="10"
+                        required></textarea>
+                    <div class="content-table__alert">
+                        <img src="assets/img/infoMessage.png" alt="info alert message">
+                        <p><i>Letras sin acento no soportadas</i></p>
+                    </div>
+                    <div class="content-table__button-actions">
+                        <button id="encriptarB"><b>Encriptar</b></button>
+                        <button id="desencriptarB"><b>Desencriptar</b></button>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="output-section">
+            <header class="output-section__output"></header>
+            <article class="output-section__noInput">
+                <picture>
+                    <img src="assets/img/Muñeco.png" alt="a little doll looking for something lost">
+                </picture>
+                <h2><b>Ningún mensaje fue encontrado</b></h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
